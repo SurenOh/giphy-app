@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeDir">
+
+    <fragment
+        android:id="@+id/homeDir"
+        android:name="com.example.giphyapp.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/toFull"
+            app:destination="@id/fullDir"
+            app:popUpTo="@id/homeDir"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/slide_to_right"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fullDir"
+        android:name="com.example.giphyapp.ui.full.FullFragment"
+        android:label="fragment_full"
+        tools:layout="@layout/fragment_full" >
+        <argument
+            android:name="link"
+            app:argType="string" />
+    </fragment>
+</navigation>
